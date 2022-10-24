@@ -3,19 +3,19 @@ import "./App.css"
 class App extends Component {
   state = {
       partiesResults: [
-          {"name": 'הליכוד', "votes": 555, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
-          {"name": 'יש עתיד', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'הציונות הדתית', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
-          {"name": 'המחנה הממלכתי', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'יהדות התורה', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
-          {"name": 'ש"ס', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
-          {"name": 'ישראל ביתנו', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'העבודה', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'חד"ש תע"ל', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'מרץ', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'רע"מ', "votes": 200, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'בל"ד', "votes": 211, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
-          {"name": 'הבית היהודי', "votes": 20, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
+          {"name": 'הליכוד', "votes": 1066892, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
+          {"name": 'יש עתיד', "votes": 614112, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'הציונות הדתית', "votes": 225641, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
+          {"name": 'המחנה הממלכתי', "votes": 501157, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'יהדות התורה', "votes": 248391, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
+          {"name": 'ש"ס', "votes": 316008, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
+          {"name": 'ישראל ביתנו', "votes": 248370, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'העבודה', "votes": 268767, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'חד"ש תע"ל', "votes": 212583, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'מרץ', "votes": 202218, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'רע"מ', "votes": 167064, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'בל"ד', "votes": 50000, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "l"},
+          {"name": 'הבית היהודי', "votes": 273836, "mandates": 0, "moreMandates": 0, "next_mandate_votes_per_mandate": 0, "side": "r"},
       ],
       results: false
   }
@@ -51,7 +51,7 @@ class App extends Component {
           party.mandates = parseInt(party.votes / MandateSurveyor);
           console.log("party.mandates: " + party.mandates + ", " + party.name)
 
-          party.next_mandate_votes_per_mandate = party.votes / party.mandates + 1;
+          party.next_mandate_votes_per_mandate = party.votes / (party.mandates + 1);
 
       })
 /*      this.state.partiesResults.forEach(party => {
@@ -78,6 +78,7 @@ class App extends Component {
       partiesOverBlockageThreshold.forEach(party => {
           this.state.partiesResults[party.name] = party;
       })
+      this.state.partiesResults.sort(function(a, b){return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)})
       this.setState({
           results: true
       })
@@ -165,6 +166,7 @@ class App extends Component {
                                   </td>
                                   <td style={{padding: "5px",border: "1px solid black"}}>
                                       <input
+                                          type={"number"}
                                           onChange={(e) => {
                                           let newPartiesResults = this.state.partiesResults;
                                           newPartiesResults[i].votes = parseInt(e.target.value);
