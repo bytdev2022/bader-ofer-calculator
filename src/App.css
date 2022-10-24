@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Tinos:wght@400;700&display=swap');
 tr:hover {
   background-color: rgb(224, 250, 198);
 }
@@ -9,7 +10,23 @@ body {
 table {
   background-color: rgb(255, 255, 255);
   border-collapse: collapse;
+  font-family: 'Tinos', serif;
 }
+
+tr, td {
+  padding: 10px;
+  border-bottom: 1px solid #d9fad4;
+}
+.border-header {
+  padding: 20px;
+  border-right: 1px outset rgba(197, 243, 177, 0.6);
+}
+/*
+.border-data {
+  border-right: 1px outset rgba(197, 243, 177, 0.6);
+}*/
+
+
 #main-container{
   display: flex;
   flex-direction: column;
@@ -19,7 +36,7 @@ table {
 #container-1 {
   display: grid;
   justify-content: center;
-  grid-template-columns: 50%;
+  grid-template-columns: 85%;
   margin-right: 50px;
   margin-left: 50px;
   direction: rtl;
@@ -28,31 +45,48 @@ table {
 #container-2 {
   display: flex;
   justify-content: center;
+  align-items: end;
   margin: 5px;
   direction: rtl;
   text-align: center;
 }
 button {
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: auto;
   text-align: center;
   background-color: rgba(216, 255, 192, 0.5); /* Green */
   color: black;
-  border: 3px solid #70F161;
+  border: 2px outset #70F161;
   padding: 8px 16px;
+  margin: 10px;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.5em;
   transition-duration: 0.4s;
   cursor: pointer;
+  font-family: 'Tinos', serif;
+  font-weight: bold;
+
 }
 button:hover {
   background-color: #70F161;
   color: white;
 }
+input {
+  padding: 3px;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+}
 
 h2 {
-
+  font-family: 'Bona Nova', serif;
+  color: #0e7500;
+}
+.block {
+  font-family: 'Bona Nova', serif;
+  font-size: 1.8em;
+  color: #45b235;
 }
 
 @media (prefers-reduced-motion: no-preference) {
