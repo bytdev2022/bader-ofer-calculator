@@ -19,7 +19,7 @@ table {
 #container-1 {
   display: grid;
   justify-content: center;
-  grid-template-columns: 40%;
+  grid-template-columns: 50%;
   margin-right: 50px;
   margin-left: 50px;
   direction: rtl;
