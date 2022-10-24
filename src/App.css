@@ -1,0 +1,58 @@
+tr:hover {
+  background-color: rgb(224, 250, 198);
+}
+
+body {
+  background: linear-gradient(to top, rgba(178, 252, 122, 0.2), rgba(196, 250, 156, 1));
+}
+
+table {
+  background-color: rgb(255, 255, 255);
+  border-collapse: collapse;
+}
+#main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#container-1 {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 40%;
+  margin-right: 50px;
+  margin-left: 50px;
+  direction: rtl;
+  text-align: center;
+}
+#container-2 {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  direction: rtl;
+  text-align: center;
+}
+button {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+}
+
+h2 {
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
