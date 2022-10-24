@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# מחשבון לנוסחת באדר-עופר
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
