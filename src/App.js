@@ -1,5 +1,8 @@
 import React, {Component} from "react";
-import "./App.css"
+import "./App.css";
+
+const ALL_MANDATES = 120;
+const BLOCKAGE_THRESHOLD_RATE = 3.25;
 
 class App extends Component {
     state = {
@@ -7,6 +10,7 @@ class App extends Component {
             {
                 "name": 'הליכוד',
                 "votes": 1066892,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -15,6 +19,7 @@ class App extends Component {
             {
                 "name": 'יש עתיד',
                 "votes": 614112,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -23,6 +28,7 @@ class App extends Component {
             {
                 "name": 'הציונות הדתית',
                 "votes": 225641,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -31,6 +37,7 @@ class App extends Component {
             {
                 "name": 'המחנה הממלכתי',
                 "votes": 501157,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -39,6 +46,7 @@ class App extends Component {
             {
                 "name": 'יהדות התורה',
                 "votes": 248391,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -47,6 +55,7 @@ class App extends Component {
             {
                 "name": 'ש"ס',
                 "votes": 316008,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -55,6 +64,7 @@ class App extends Component {
             {
                 "name": 'ישראל ביתנו',
                 "votes": 248370,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -63,6 +73,7 @@ class App extends Component {
             {
                 "name": 'העבודה',
                 "votes": 268767,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -71,6 +82,7 @@ class App extends Component {
             {
                 "name": 'חד"ש תע"ל',
                 "votes": 212583,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -79,6 +91,7 @@ class App extends Component {
             {
                 "name": 'מרץ',
                 "votes": 202218,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -87,6 +100,7 @@ class App extends Component {
             {
                 "name": 'רע"מ',
                 "votes": 167064,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -95,6 +109,7 @@ class App extends Component {
             {
                 "name": 'בל"ד',
                 "votes": 50000,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -103,6 +118,7 @@ class App extends Component {
             {
                 "name": 'הבית היהודי',
                 "votes": 273836,
+                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -112,8 +128,6 @@ class App extends Component {
         results: false,
         isHovering: false
     }
-
-
     calculate = () => {
         this.state.partiesResults.forEach((party) => {
             party.mandates = 0;
@@ -121,57 +135,33 @@ class App extends Component {
             party.moreMandates = 0;
 
         })
-        const ALL_MANDATES = 120;
-        const BLOCKAGE_THRESHOLD_RATE = 3.25;
+
         let allVotes = 0;
         for (let i = 0; i < this.state.partiesResults.length; i++) {
             allVotes += this.state.partiesResults[i].votes;
         }
-        console.log("allVotes: " + allVotes)
-
         let blockageThreshold = (allVotes / 100) * BLOCKAGE_THRESHOLD_RATE
         let partiesOverBlockageThreshold = this.state.partiesResults.filter(party => party.votes >= blockageThreshold);
-        console.log(partiesOverBlockageThreshold)
 
         let allCountedVotes = 0;
         for (let i = 0; i < partiesOverBlockageThreshold.length; i++) {
             allCountedVotes += partiesOverBlockageThreshold[i].votes;
         }
-        console.log("allCountedVotes: " + allCountedVotes)
 
         let MandateSurveyor = allCountedVotes / ALL_MANDATES;
         partiesOverBlockageThreshold.forEach(party => {
-            party.mandates = parseInt(party.votes / MandateSurveyor);
-            console.log("party.mandates: " + party.mandates + ", " + party.name)
-
+            party.mandates = parseInt((party.votes / MandateSurveyor).toString());
             party.next_mandate_votes_per_mandate = party.votes / (party.mandates + 1);
 
         })
-        /*      this.state.partiesResults.forEach(party => {
-                  party.mandates = parseInt(party.votes / MandateSurveyor);
-                  console.log("party.mandates: " + party.mandates + ", " + party.name)
 
-                  party.next_mandate_votes_per_mandate = party.votes / party.mandates + 1;
-
-              })*/
-        let i = 0
         while (this.remainedMandates(partiesOverBlockageThreshold) > 0) {
-            console.log("i: " + i)
-            i++;
             let partyToAddMandate = partiesOverBlockageThreshold[this.max(partiesOverBlockageThreshold)];
             partyToAddMandate.moreMandates += 1
             partyToAddMandate.next_mandate_votes_per_mandate = partyToAddMandate.votes / (
                 partyToAddMandate.mandates + partyToAddMandate.moreMandates + 1)
             partiesOverBlockageThreshold[partyToAddMandate] = partyToAddMandate
-            console.log("partyToAddMandate: " + partyToAddMandate.name)
-            console.log("partiesOverBlockageThreshold[partyToAddMandate]: " + partiesOverBlockageThreshold[partyToAddMandate].name)
-
         }
-
-        partiesOverBlockageThreshold.forEach(party => {
-            // eslint-disable-next-line react/no-direct-mutation-state
-            this.state.partiesResults[party.name] = party;
-        })
         this.state.partiesResults.sort(function (a, b) {
             return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)
         })
@@ -180,6 +170,10 @@ class App extends Component {
         })
 
     }
+    /*    roundAvoid = (val, places) => {
+            let scale = Math.pow(10, places);
+            return Math.round(val * scale) / scale;
+        }*/
     max = (partiesOverBlockageThreshold) => {
         let index = 0;
         let max = 0;
@@ -196,7 +190,7 @@ class App extends Component {
         for (let i = 0; i < partiesOverBlockageThreshold.length; i++) {
             sum += (partiesOverBlockageThreshold[i].mandates + partiesOverBlockageThreshold[i].moreMandates);
         }
-        return 120 - sum;
+        return (ALL_MANDATES - sum);
     }
 
 
@@ -206,6 +200,7 @@ class App extends Component {
             party.mandates = 0;
             party.next_mandate_votes_per_mandate = 0;
             party.moreMandates = 0;
+            party.distance = 0;
 
         })
         this.setState({
@@ -229,25 +224,15 @@ class App extends Component {
         }
         return sum;
     }
-    handleMouseEnter = () => {
-        this.setState({
-            isHovering: true
-        })
-    };
-
-    handleMouseLeave = () => {
-        this.setState({
-            isHovering: false
-        })
-    };
 
     render() {
         return (
             <div id={"main-container"}>
                 <div id={"container-1"}>
-                    <h2 style={{fontSize: "3em"}}>מחשבון באדר-עופר</h2>
+                    <h2 id={"header"}>מחשבון באדר-עופר</h2>
                     <table>
-                        <tr style={{backgroundColor: "rgb(194,238,190)"}}>
+                        <thead>
+                        <tr id={"table-row-header"}>
                             <th>
                                 מפלגה
                             </th>
@@ -255,26 +240,25 @@ class App extends Component {
                                 קולות
                             </th>
                             <th className={"border-header"}>
-                                מנדטים
+                                מרחק
                             </th>
                             <th className={"border-header"}>
-                                מנדטים שנוספו
+                                לפני באדר עופר
                             </th>
                             <th className={"border-header"}>
                                 סה"כ
                             </th>
                         </tr>
+                        </thead>
                         {
                             this.state.partiesResults.map((item, i) => {
                                 return (
-                                    <tr style={{backgroundColor: (i % 2 !== 0) ? "rgba(224, 250, 198, 0.6)" : null}}>
-                                        <td style={{
-                                            fontWeight: "bold",
-                                            backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null
-                                        }}>
+                                    <tbody key={i}>
+                                    <tr>
+                                        <td style={{fontWeight: "bold", backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null}}>
                                             {item.name}
                                         </td>
-                                        <td className={"border-data"}>
+                                        <td>
                                             <input
                                                 type={"number"}
                                                 onChange={(e) => {
@@ -288,17 +272,17 @@ class App extends Component {
                                                 value={item.votes}
                                             />
                                         </td>
-                                        <td className={"border-data"}>
+                                        <td>
+                                            {item.distance}
+                                        </td>
+                                        <td>
                                             {item.mandates}
                                         </td>
-                                        <td className={"border-data"}>
-                                            {item.moreMandates}
-                                        </td>
-                                        <td className={"border-data"}
-                                            style={{fontWeight: "bold", backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null}}>
+                                        <td style={{fontWeight: "bold", backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null}}>
                                             {item.moreMandates + item.mandates}
                                         </td>
                                     </tr>
+                                    </tbody>
                                 )
                             })
                         }

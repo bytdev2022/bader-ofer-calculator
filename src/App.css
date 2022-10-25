@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:wght@400;700&family=Tinos:wght@400;700&display=swap');
-tr:hover {
-  background-color: rgb(224, 250, 198);
-}
+
 
 body {
   background-color: rgba(188, 246, 146, 0.7);
@@ -11,8 +9,10 @@ table {
   background-color: rgb(255, 255, 255);
   border-collapse: collapse;
   font-family: 'Tinos', serif;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-
 tr, td {
   padding: 10px;
   border-bottom: 1px solid #d9fad4;
@@ -21,6 +21,19 @@ tr, td {
   padding: 20px;
   border-right: 1px outset rgba(197, 243, 177, 0.6);
 }
+th {
+  background-color: rgb(194,238,190);
+}
+
+tr:nth-child(odd){
+  background-color: rgba(224, 250, 198, 0.6);
+}
+
+tr:hover {
+  background-color: rgb(224, 250, 198);
+}
+
+
 /*
 .border-data {
   border-right: 1px outset rgba(197, 243, 177, 0.6);
@@ -55,7 +68,7 @@ button {
   height: auto;
   text-align: center;
   background-color: rgba(216, 255, 192, 0.5); /* Green */
-  color: black;
+  color: #056702;
   border: 2px outset #70F161;
   padding: 8px 16px;
   margin: 10px;
@@ -66,6 +79,9 @@ button {
   cursor: pointer;
   font-family: 'Tinos', serif;
   font-weight: bold;
+  border-radius: 5px 5px 5px 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
 }
 button:hover {
@@ -78,7 +94,9 @@ input {
   height: 30px;
   text-align: center;
 }
-
+#header {
+  font-size: 3em;
+}
 h2 {
   font-family: 'Bona Nova', serif;
   color: #0e7500;
@@ -89,9 +107,78 @@ h2 {
   color: #45b235;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 500px) {
+
+  body {
+    background-color: rgba(188, 246, 146, 0.7);
+  }
+
+  table {
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
+    font-family: 'Tinos', serif;
+    font-size: 0.8em;
+  }
+
+  tr:nth-child(odd){
+    background-color: rgba(224, 250, 198, 0.6);
+  }
+
+  tr, td {
+    padding: 5px;
+    border-bottom: 1px solid #d9fad4;
+  }
+  .border-header {
+    padding: 7px;
+    border-right: 1px outset rgba(197, 243, 177, 0.6);
+  }
+
+  #main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #container-1 {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 7fr;
+    margin-right: 10px;
+    margin-left: 10px;
+    direction: rtl;
+    text-align: center;
+    overflow: scroll;
+
+  }
+  #container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin: 5px;
+    direction: rtl;
+    text-align: center;
+  }
+
+  input {
+    padding: 3px;
+    width: 60px;
+    height: 15px;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: 'Bona Nova', serif;
+    color: #0e7500;
+  }
+  #header {
+    font-size: 2em;
+  }
+  .block {
+    font-family: 'Bona Nova', serif;
+    color: #45b235;
+    font-size: 1.5em;
+
   }
 }
 
