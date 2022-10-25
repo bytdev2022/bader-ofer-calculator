@@ -170,10 +170,7 @@ class App extends Component {
         })
 
     }
-    /*    roundAvoid = (val, places) => {
-            let scale = Math.pow(10, places);
-            return Math.round(val * scale) / scale;
-        }*/
+
     max = (partiesOverBlockageThreshold) => {
         let index = 0;
         let max = 0;
@@ -250,11 +247,11 @@ class App extends Component {
                             </th>
                         </tr>
                         </thead>
+                        <tbody>
                         {
                             this.state.partiesResults.map((item, i) => {
                                 return (
-                                    <tbody key={i}>
-                                    <tr>
+                                    <tr key={i}>
                                         <td style={{fontWeight: "bold", backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null}}>
                                             {item.name}
                                         </td>
@@ -282,11 +279,10 @@ class App extends Component {
                                             {item.moreMandates + item.mandates}
                                         </td>
                                     </tr>
-                                    </tbody>
                                 )
                             })
                         }
-
+                        </tbody>
                     </table>
                 </div>
 
