@@ -101,7 +101,7 @@ class App extends Component {
             },
             {
                 "name": 'המחנה הממלכתי',
-                "votes": 501157,
+                "votes": 481641,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -221,19 +221,21 @@ class App extends Component {
             groups[groupIndexToAddMandate].next_mandate_votes_per_mandate = groups[groupIndexToAddMandate].votes / (
                 groups[groupIndexToAddMandate].mandates + groups[groupIndexToAddMandate].moreMandates + 1)
         }
-
+        console.log(groups)
         for (let i = 0; i < groups.length; i++) {
             let groupMandates = groups[i].mandates + groups[i].moreMandates;
             let votesPerMandate = groups[i].votes / groupMandates;
             for (let j = 0; j < groups[i].names.length; j++) {
                 let partyIndex = partiesOverBlockageThreshold.findIndex(party => party.name === groups[i].names[j])
                 if (partyIndex >= 0){
-                    partiesOverBlockageThreshold[partyIndex].mandates = Math.floor(partiesOverBlockageThreshold[partyIndex].votes / votesPerMandate)
-                    partiesOverBlockageThreshold[partyIndex].next_mandate_votes_per_mandate = partiesOverBlockageThreshold[partyIndex].votes / (partiesOverBlockageThreshold[partyIndex]["mandates"] + 1);
+                    if (partiesOverBlockageThreshold[partyIndex].mandates < Math.floor(partiesOverBlockageThreshold[partyIndex].votes / votesPerMandate)){
+                        partiesOverBlockageThreshold[partyIndex].moreMandates += 1;
+                    }
+                    partiesOverBlockageThreshold[partyIndex].next_mandate_votes_per_mandate = partiesOverBlockageThreshold[partyIndex].votes / (partiesOverBlockageThreshold[partyIndex].mandates + partiesOverBlockageThreshold[partyIndex].moreMandates + 1);
                 }
             }
-            let groupParties = partiesOverBlockageThreshold.filter((party) => groups[i]["names"].includes(party["name"]))
-            let groupPartiesMandates = this.sumOfPropertyInObjectsArray(groupParties, ["mandates"])
+            let groupParties = partiesOverBlockageThreshold.filter((party) => groups[i].names.includes(party.name))
+            let groupPartiesMandates = this.sumOfPropertyInObjectsArray(groupParties, ["mandates"]) + this.sumOfPropertyInObjectsArray(groupParties, ["moreMandates"])
             if (groupPartiesMandates < groupMandates) {
                 let partyNameToAddMandate = groupParties[this.max(groupParties)].name;
                 let partyIndex = partiesOverBlockageThreshold.findIndex(party => party.name === partyNameToAddMandate)
