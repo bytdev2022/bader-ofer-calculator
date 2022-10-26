@@ -74,7 +74,7 @@ class App extends Component {
         partiesResults: [
             {
                 "name": 'הליכוד',
-                "votes": 1066892,
+                "votes": 1106892,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -83,7 +83,7 @@ class App extends Component {
             },
             {
                 "name": 'יש עתיד',
-                "votes": 614112,
+                "votes": 804112,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -92,7 +92,7 @@ class App extends Component {
             },
             {
                 "name": 'הציונות הדתית',
-                "votes": 225641,
+                "votes": 485641,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -110,7 +110,7 @@ class App extends Component {
             },
             {
                 "name": 'יהדות התורה',
-                "votes": 248391,
+                "votes": 258391,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -119,7 +119,7 @@ class App extends Component {
             },
             {
                 "name": 'ש"ס',
-                "votes": 316008,
+                "votes": 326008,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -128,7 +128,7 @@ class App extends Component {
             },
             {
                 "name": 'ישראל ביתנו',
-                "votes": 248370,
+                "votes": 208370,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -137,7 +137,7 @@ class App extends Component {
             },
             {
                 "name": 'העבודה',
-                "votes": 268767,
+                "votes": 191767,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -146,7 +146,7 @@ class App extends Component {
             },
             {
                 "name": 'חד"ש תע"ל',
-                "votes": 212583,
+                "votes": 182583,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -155,7 +155,7 @@ class App extends Component {
             },
             {
                 "name": 'מרץ',
-                "votes": 202218,
+                "votes": 192218,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
@@ -182,7 +182,7 @@ class App extends Component {
             },
             {
                 "name": 'הבית היהודי',
-                "votes": 273836,
+                "votes": 40000,
                 "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
