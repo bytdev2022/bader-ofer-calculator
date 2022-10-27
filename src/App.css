@@ -65,7 +65,7 @@ footer {
   padding: 5px;
   background: linear-gradient(rgba(33, 45, 22, 0.94), rgba(56, 77, 37, 0.99)) ;
   margin-top: 10px;
-  height: 100px;
+  height: 120px;
   color: #a8e38a;
   font-family: 'Tinos', serif;
   font-size: 1.5em;
@@ -98,14 +98,34 @@ button:hover {
   color: #f1f6ed;
 }
 
+p {
+  font-size: 0.75em;
+  display: inline;
+  text-shadow: 0 0 0 #a8e38a;
+  color: #cae5bc;
+}
+
+#wordle-link{
+  color: #cae5bc;
+  text-decoration: none;
+  text-shadow: 0 0 0 #a8e38a;
+  transition: all 700ms;
+
+}
+#wordle-link:hover{
+  color: #f3fcf3;
+  text-decoration: underline;
+  text-shadow: 0 0 15px #a8e38a;
+
+}
 
 #links{
   display: flex;
   justify-content: center;
 }
 
-a {
-  margin-right: 10px;
+.images {
+  margin-right: 15px;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -214,8 +234,65 @@ h2 {
     font-family: 'Bona Nova', serif;
     color: #45b235;
     font-size: 1.5em;
-
   }
+
+  footer {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background: linear-gradient(rgba(33, 45, 22, 0.94), rgba(56, 77, 37, 0.99)) ;
+    margin-top: 7px;
+    height: 90px;
+    color: #a8e38a;
+    font-family: 'Tinos', serif;
+    font-size: 0.9em;
+  }
+
+  p {
+    font-size: 0.55em;
+    display: inline;
+    text-shadow: 0 0 0 #a8e38a;
+    color: #cae5bc;
+  }
+
+  #wordle-link{
+    color: #cae5bc;
+    text-decoration: underline;
+    text-shadow: 0 0 0 #a8e38a;
+    transition: all 700ms;
+  }
+
+  #wordle-link:hover{
+    color: #f3fcf3;
+    text-shadow: 0 0 15px #a8e38a;
+  }
+
+  #links{
+    display: flex;
+    justify-content: center;
+  }
+
+  .images {
+    margin-right: 10px;
+    margin-top: 7px;
+    cursor: pointer;
+  }
+
+  img{
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #a8e38a;
+    transition: all 700ms;
+  }
+
+  img:hover{
+    box-shadow: 0 0 15px #a8e38a;
+  }
+
 }
 
 @keyframes App-logo-spin {

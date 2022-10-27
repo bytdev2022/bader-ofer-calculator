@@ -417,13 +417,13 @@ class App extends Component {
                 <div id={"footer"}>
                     <footer>
                         <div style={{textShadow: "0 0 10px #a8e38a"}}>
-                            © 2022 Developed by BYT Dev
+                            © 2022 Developed by BYT Dev <br/><p>The creators of <a id={"wordle-link"} href={"https://hebrewordle.netlify.app/"} rel={"noreferrer noopener"} target={"_blank"}> Hebrew Wordle</a></p>
                             <div id={"links"}>
-                                <a rel={"noreferrer noopener"} target={"_blank"}
+                                <a className={"images"} rel={"noreferrer noopener"} target={"_blank"}
                                    href={"https://github.com/bytdev2022/bader-ofer-calculator"}>
                                     <img src={gitImage} alt={"git"}/>
                                 </a>
-                                <a rel={"noreferrer noopener"} target={"_blank"}
+                                <a className={"images"} rel={"noreferrer noopener"} target={"_blank"}
                                    href={"https://www.linkedin.com/in/yitzhak-amsalem/"}>
                                     <img
                                         src={linkedinImage} alt={"linkedin"}/>
