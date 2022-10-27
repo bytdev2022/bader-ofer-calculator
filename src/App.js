@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import "./App.css";
+import gitImage from './images/git.png';
+import linkedinImage from './images/linkedin.png';
 
 const ALL_MANDATES = 120;
 const BLOCKAGE_THRESHOLD_RATE = 3.25;
@@ -390,7 +392,6 @@ class App extends Component {
                         </tbody>
                     </table>
                 </div>
-
                 <div id={"container-2"}>
                     {
                         this.state.results &&
@@ -415,15 +416,18 @@ class App extends Component {
                 </div>
                 <div id={"footer"}>
                     <footer>
-                        <div>
+                        <div style={{textShadow: "0 0 10px #a8e38a"}}>
                             © 2022 Developed by BYT Dev
                             <div id={"links"}>
-                            <a rel={"noreferrer noopener"} target={"_blank"} href={"https://github.com/bytdev2022/bader-ofer-calculator"}>
-                            <img src={"https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"} alt={"git"} />
-                            </a>
-                            <a rel={"noreferrer noopener"} target={"_blank"} href={"https://www.linkedin.com/in/yitzhak-amsalem/"}>
-                                <img src={"https://www.hon.co.il/wp-content/uploads/2019/09/%D7%9C%D7%99%D7%A0%D7%A7%D7%93%D7%90%D7%99%D7%9F-480x480.png"} alt={"linkedin"} />
-                            </a>
+                                <a rel={"noreferrer noopener"} target={"_blank"}
+                                   href={"https://github.com/bytdev2022/bader-ofer-calculator"}>
+                                    <img src={gitImage} alt={"git"}/>
+                                </a>
+                                <a rel={"noreferrer noopener"} target={"_blank"}
+                                   href={"https://www.linkedin.com/in/yitzhak-amsalem/"}>
+                                    <img
+                                        src={linkedinImage} alt={"linkedin"}/>
+                                </a>
                             </div>
                         </div>
                     </footer>
