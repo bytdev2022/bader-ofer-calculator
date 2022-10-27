@@ -192,6 +192,7 @@ class App extends Component {
         ],
         results: false,
     }
+
     calculate = () => {
         this.state.partiesResults.forEach((party) => {
             party.mandates = 0;
@@ -227,8 +228,8 @@ class App extends Component {
             let votesPerMandate = groups[i].votes / groupMandates;
             for (let j = 0; j < groups[i].names.length; j++) {
                 let partyIndex = partiesOverBlockageThreshold.findIndex(party => party.name === groups[i].names[j])
-                if (partyIndex >= 0){
-                    if (partiesOverBlockageThreshold[partyIndex].mandates < Math.floor(partiesOverBlockageThreshold[partyIndex].votes / votesPerMandate)){
+                if (partyIndex >= 0) {
+                    if (partiesOverBlockageThreshold[partyIndex].mandates < Math.floor(partiesOverBlockageThreshold[partyIndex].votes / votesPerMandate)) {
                         partiesOverBlockageThreshold[partyIndex].moreMandates += 1;
                     }
                     partiesOverBlockageThreshold[partyIndex].next_mandate_votes_per_mandate = partiesOverBlockageThreshold[partyIndex].votes / (partiesOverBlockageThreshold[partyIndex].mandates + partiesOverBlockageThreshold[partyIndex].moreMandates + 1);
@@ -250,9 +251,9 @@ class App extends Component {
         })
     }
 
-    updateGroupsFromParties = (partiesOverBlockageThreshold)=>{
-        for (let i =0; i < groups.length; i++){
-            let group = partiesOverBlockageThreshold.filter((party)=> groups[i]["names"].includes(party["name"]))
+    updateGroupsFromParties = (partiesOverBlockageThreshold) => {
+        for (let i = 0; i < groups.length; i++) {
+            let group = partiesOverBlockageThreshold.filter((party) => groups[i]["names"].includes(party["name"]))
             groups[i]["votes"] = this.sumOfPropertyInObjectsArray(group, ["votes"])
             groups[i]["mandates"] = this.sumOfPropertyInObjectsArray(group, ["mandates"])
             groups[i]["next_mandate_votes_per_mandate"] = groups[i].votes / (groups[i].mandates + 1)
@@ -335,7 +336,7 @@ class App extends Component {
                                 קולות
                             </th>
                             <th className={"border-header"}>
-                                מרחק
+                                מרחק למנדט הבא
                             </th>
                             <th className={"border-header"}>
                                 לפני באדר עופר
@@ -411,6 +412,21 @@ class App extends Component {
                             </h2>
                         </div>
                     }
+                </div>
+                <div id={"footer"}>
+                    <footer>
+                        <div>
+                            © 2022 Developed by BYT Dev
+                            <div id={"links"}>
+                            <a rel={"noreferrer noopener"} target={"_blank"} href={"https://github.com/bytdev2022/bader-ofer-calculator"}>
+                            <img src={"https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"} alt={"git"} />
+                            </a>
+                            <a rel={"noreferrer noopener"} target={"_blank"} href={"https://www.linkedin.com/in/yitzhak-amsalem/"}>
+                                <img src={"https://www.hon.co.il/wp-content/uploads/2019/09/%D7%9C%D7%99%D7%A0%D7%A7%D7%93%D7%90%D7%99%D7%9F-480x480.png"} alt={"linkedin"} />
+                            </a>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
             </div>
         );

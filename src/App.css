@@ -33,13 +33,6 @@ tr:hover {
   background-color: rgb(224, 250, 198);
 }
 
-
-/*
-.border-data {
-  border-right: 1px outset rgba(197, 243, 177, 0.6);
-}*/
-
-
 #main-container{
   display: flex;
   flex-direction: column;
@@ -63,13 +56,29 @@ tr:hover {
   direction: rtl;
   text-align: center;
 }
+
+footer {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background: linear-gradient(rgba(33, 45, 22, 0.94), rgba(56, 77, 37, 0.99)) ;
+  margin-top: 10px;
+  height: 100px;
+  color: #a8e38a;
+  font-family: 'Tinos', serif;
+  font-size: 1.5em;
+
+}
+
 button {
   width: 120px;
   height: auto;
   text-align: center;
-  background-color: rgba(216, 255, 192, 0.5); /* Green */
+  background: rgba(221, 252, 217, 0.64);
   color: #056702;
-  border: 2px outset #70F161;
+  border: 2px outset rgba(41, 182, 25, 0.44);
   padding: 8px 16px;
   margin: 10px;
   text-decoration: none;
@@ -85,15 +94,42 @@ button {
 
 }
 button:hover {
-  background-color: #70F161;
-  color: white;
+  background-color: #95d58c;
+  color: #f1f6ed;
 }
+
+
+#links{
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+img{
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #a8e38a;
+  transition: all 700ms;
+}
+
+img:hover{
+  box-shadow: 0 0 15px #a8e38a;
+}
+
 input {
   padding: 3px;
   width: 120px;
   height: 30px;
-  text-align: center;
+  text-align: center
 }
+
 #header {
   font-size: 3em;
 }
@@ -104,7 +140,7 @@ h2 {
 .block {
   font-family: 'Bona Nova', serif;
   font-size: 1.8em;
-  color: #45b235;
+  color: #3b7533;
 }
 
 @media (max-width: 500px) {
