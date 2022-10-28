@@ -11,40 +11,29 @@
 [מחשבון באדר-עופר](https://bader-ofer-calculator.netlify.app/)
 
 עם כניסתכם למחשבון יופיעו נתונים עדכניים
-
-מאתר ועדת הבחירות המרכזית
+מהאתר של ועדת הבחירות המרכזית [(כניסה לאתר)](https://votes25.bechirot.gov.il/)
 
 תוכלו לשנות את מספרי הקולות
-
 ולצפות בתרחישים אפשריים תוך כדי הספירה
 
 ## אלגוריתם
 
 להרחבה והסבר מפורט
-
 אודות שיטת החישוב
 
-ומשמעות `הסכמי העודפים`
+ומשמעותם של `הסכמי העודפים`
 
 היכנסו ל 
 [אתר הכנסת](https://main.knesset.gov.il/About/Lexicon/pages/seats.aspx)
 או צפו ב 
 [יוטיוב](https://www.youtube.com/watch?v=iTCAMlQtxmc)
 
-###קריאה נוספת
+##קריאה נוספת
 
-על ההיסטוריה של חישוב המנדטים ועל תיקון החוק על שם באדר-עופר
+על ההיסטוריה של שיטת חישוב המנדטים הנהוגה בישראל
+
+ועל תיקון החוק על שם באדר-עופר
 
 ניתן לקרוא עוד ב
 [ויקיפדיה](https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%91%D7%93%D7%A8-%D7%A2%D7%95%D7%A4%D7%A8)
 
-
-###Developers
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
