@@ -22,7 +22,14 @@ tr, td {
   border-right: 1px outset rgba(197, 243, 177, 0.6);
 }
 th {
-  background-color: rgb(194,238,190);
+  background-color: rgb(194, 238, 190);
+  font-size: 1.2em;
+}
+
+.border-header-sort:hover {
+  background-color: rgb(176, 246, 169);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 tr:nth-child(even){

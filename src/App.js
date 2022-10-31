@@ -77,7 +77,6 @@ class App extends Component {
             {
                 "name": 'הליכוד',
                 "votes": 1106892,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -86,7 +85,6 @@ class App extends Component {
             {
                 "name": 'יש עתיד',
                 "votes": 804112,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -95,7 +93,6 @@ class App extends Component {
             {
                 "name": 'הציונות הדתית',
                 "votes": 485641,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -104,7 +101,6 @@ class App extends Component {
             {
                 "name": 'המחנה הממלכתי',
                 "votes": 481641,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -113,7 +109,6 @@ class App extends Component {
             {
                 "name": 'יהדות התורה',
                 "votes": 258391,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -122,7 +117,6 @@ class App extends Component {
             {
                 "name": 'ש"ס',
                 "votes": 326008,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -131,7 +125,6 @@ class App extends Component {
             {
                 "name": 'ישראל ביתנו',
                 "votes": 208370,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -140,7 +133,6 @@ class App extends Component {
             {
                 "name": 'העבודה',
                 "votes": 191767,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -149,7 +141,6 @@ class App extends Component {
             {
                 "name": 'חד"ש תע"ל',
                 "votes": 182583,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -158,7 +149,6 @@ class App extends Component {
             {
                 "name": 'מרץ',
                 "votes": 192218,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -167,7 +157,6 @@ class App extends Component {
             {
                 "name": 'רע"מ',
                 "votes": 167064,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -176,7 +165,6 @@ class App extends Component {
             {
                 "name": 'בל"ד',
                 "votes": 50000,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -185,7 +173,6 @@ class App extends Component {
             {
                 "name": 'הבית היהודי',
                 "votes": 40000,
-                "distance": 0,
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -200,6 +187,11 @@ class App extends Component {
             party.mandates = 0;
             party.next_mandate_votes_per_mandate = 0;
             party.moreMandates = 0;
+        })
+        groups.forEach((group) => {
+            group.mandates = 0;
+            group.next_mandate_votes_per_mandate = 0;
+            group.moreMandates = 0;
         })
         let allVotes = 0;
         for (let i = 0; i < this.state.partiesResults.length; i++) {
@@ -323,6 +315,27 @@ class App extends Component {
         return sum;
     }
 
+    sortByMandates = () => {
+        this.state.partiesResults.sort(function (a, b) {
+            return (b.mandates - a.mandates)
+        })
+        this.setState({});
+    }
+
+    sortByVotes = () => {
+        this.state.partiesResults.sort(function (a, b) {
+            return (b.votes - a.votes)
+        })
+        this.setState({});
+    }
+
+    sortBySum = () => {
+        this.state.partiesResults.sort(function (a, b) {
+            return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)
+        })
+        this.setState({});
+    }
+
     render() {
         return (
             <div id={"main-container"}>
@@ -334,16 +347,13 @@ class App extends Component {
                             <th>
                                 מפלגה
                             </th>
-                            <th className={"border-header"}>
+                            <th onClick={this.sortByVotes} className={"border-header border-header-sort"}>
                                 קולות
                             </th>
-                            <th className={"border-header"}>
-                                מרחק למנדט הבא
-                            </th>
-                            <th className={"border-header"}>
+                            <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
                                 לפני באדר עופר
                             </th>
-                            <th className={"border-header"}>
+                            <th onClick={this.sortBySum} className={"border-header border-header-sort"}>
                                 סה"כ
                             </th>
                         </tr>
@@ -372,9 +382,6 @@ class App extends Component {
                                                 }
                                                 value={item.votes}
                                             />
-                                        </td>
-                                        <td>
-                                            {item.distance}
                                         </td>
                                         <td>
                                             {item.mandates}
