@@ -348,13 +348,13 @@ class App extends Component {
                                 מפלגה
                             </th>
                             <th onClick={this.sortByVotes} className={"border-header border-header-sort"}>
-                                קולות
+                                 קולות &#8595;
                             </th>
                             <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
-                                לפני באדר עופר
+                                 לפני באדר עופר &#8595;
                             </th>
                             <th onClick={this.sortBySum} className={"border-header border-header-sort"}>
-                                סה"כ
+                                סה"כ &#8595;
                             </th>
                         </tr>
                         </thead>
