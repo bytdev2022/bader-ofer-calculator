@@ -11,63 +11,72 @@ const groups = [
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['יש עתיד', 'המחנה הממלכתי'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['יהדות התורה', 'ש"ס'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['העבודה', 'מרץ'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['ישראל ביתנו'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['חד"ש תע"ל'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['רע"מ'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['בל"ד'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     },
     {
         "names": ['הבית היהודי'],
         "votes": 0,
         "mandates": 0,
         "moreMandates": 0,
-        "next_mandate_votes_per_mandate": 0
+        "next_mandate_votes_per_mandate": 0,
+        "rate": []
     }
 ];
 
@@ -76,7 +85,8 @@ class App extends Component {
         partiesResults: [
             {
                 "name": 'הליכוד',
-                "votes": 815605,
+                "votes": 979036,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -84,7 +94,8 @@ class App extends Component {
             },
             {
                 "name": 'יש עתיד',
-                "votes": 598307,
+                "votes": 752682,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -92,7 +103,8 @@ class App extends Component {
             },
             {
                 "name": 'הציונות הדתית',
-                "votes": 369700,
+                "votes": 432797,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -100,23 +112,26 @@ class App extends Component {
             },
             {
                 "name": 'המחנה הממלכתי',
-                "votes": 304673,
+                "votes": 374527,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
                 "side": "l"
             },
             {
-                "name": 'יהדות התורה',
-                "votes": 233217,
+                "name": 'ש"ס',
+                "votes": 352230,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
                 "side": "r"
             },
             {
-                "name": 'ש"ס',
-                "votes": 306627,
+                "name": 'יהדות התורה',
+                "votes": 257028,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -124,15 +139,17 @@ class App extends Component {
             },
             {
                 "name": 'ישראל ביתנו',
-                "votes": 150358,
+                "votes": 182683,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
                 "side": "l"
             },
             {
-                "name": 'העבודה',
-                "votes": 119543,
+                "name": 'רע"מ',
+                "votes": 181987,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -140,7 +157,17 @@ class App extends Component {
             },
             {
                 "name": 'חד"ש תע"ל',
-                "votes": 114315,
+                "votes": 163949,
+                "rate": [],
+                "mandates": 0,
+                "moreMandates": 0,
+                "next_mandate_votes_per_mandate": 0,
+                "side": "l"
+            },
+            {
+                "name": 'העבודה',
+                "votes": 149482,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -149,14 +176,7 @@ class App extends Component {
             {
                 "name": 'מרץ',
                 "votes": 1,
-                "mandates": 0,
-                "moreMandates": 0,
-                "next_mandate_votes_per_mandate": 0,
-                "side": "l"
-            },
-            {
-                "name": 'רע"מ',
-                "votes": 132422,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -165,6 +185,7 @@ class App extends Component {
             {
                 "name": 'בל"ד',
                 "votes": 1,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -173,6 +194,7 @@ class App extends Component {
             {
                 "name": 'הבית היהודי',
                 "votes": 1,
+                "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
                 "next_mandate_votes_per_mandate": 0,
@@ -180,6 +202,7 @@ class App extends Component {
             },
         ],
         results: false,
+        distributionMandates: ""
     }
 
     calculate = () => {
@@ -187,11 +210,13 @@ class App extends Component {
             party.mandates = 0;
             party.next_mandate_votes_per_mandate = 0;
             party.moreMandates = 0;
+            party.rate = []
         })
         groups.forEach((group) => {
             group.mandates = 0;
             group.next_mandate_votes_per_mandate = 0;
             group.moreMandates = 0;
+            group.rate = []
         })
         let allVotes = 0;
         for (let i = 0; i < this.state.partiesResults.length; i++) {
@@ -210,13 +235,41 @@ class App extends Component {
         })
 
         this.updateGroupsFromParties(partiesOverBlockageThreshold);
+        let updateDistributionMandates = this.remainedMandates(partiesOverBlockageThreshold);
+        let rate = 1;
         while (this.remainedMandates(groups) > 0) {
             let groupIndexToAddMandate = this.max(groups);
+            groups[groupIndexToAddMandate].rate.push(rate);
+            rate++;
+            console.log(groups[groupIndexToAddMandate].names[0] + ": " + groups[groupIndexToAddMandate].rate);
             groups[groupIndexToAddMandate].moreMandates += 1;
             groups[groupIndexToAddMandate].next_mandate_votes_per_mandate = groups[groupIndexToAddMandate].votes / (
-                groups[groupIndexToAddMandate].mandates + groups[groupIndexToAddMandate].moreMandates + 1)
+                groups[groupIndexToAddMandate].mandates + groups[groupIndexToAddMandate].moreMandates + 1);
         }
-        console.log(groups)
+
+        let leftGroups = groups.filter(() => {
+            return true
+        });
+
+        while (leftGroups.length > 0) {
+            let groupToRate = this.maxGroup(leftGroups);
+            let i = leftGroups.indexOf(groupToRate)
+            if (groupToRate.votes > 0) {
+                let j = groups.indexOf(groupToRate);
+                groups[j].rate.push(rate)
+                rate++;
+            }
+            leftGroups.splice(i, 1);
+        }
+
+        let partyWithoutAgreement = groups.filter(group => group.names.length === 1)
+        partyWithoutAgreement.forEach(group => {
+            let index = partiesOverBlockageThreshold.findIndex(party => party.name === group.names[0])
+            if (index >= 0) {
+                partiesOverBlockageThreshold[index].rate = group.rate;
+            }
+        })
+
         for (let i = 0; i < groups.length; i++) {
             let groupMandates = groups[i].mandates + groups[i].moreMandates;
             let votesPerMandate = groups[i].votes / groupMandates;
@@ -225,33 +278,56 @@ class App extends Component {
                 if (partyIndex >= 0) {
                     if (partiesOverBlockageThreshold[partyIndex].mandates < Math.floor(partiesOverBlockageThreshold[partyIndex].votes / votesPerMandate)) {
                         partiesOverBlockageThreshold[partyIndex].moreMandates += 1;
+                        partiesOverBlockageThreshold[partyIndex].rate.push(groups[i].rate.shift());
                     }
-                    partiesOverBlockageThreshold[partyIndex].next_mandate_votes_per_mandate = partiesOverBlockageThreshold[partyIndex].votes / (partiesOverBlockageThreshold[partyIndex].mandates + partiesOverBlockageThreshold[partyIndex].moreMandates + 1);
+                    partiesOverBlockageThreshold[partyIndex].next_mandate_votes_per_mandate = partiesOverBlockageThreshold[partyIndex].votes / (partiesOverBlockageThreshold[partyIndex].mandates
+                        + partiesOverBlockageThreshold[partyIndex].moreMandates + 1);
                 }
             }
             let groupParties = partiesOverBlockageThreshold.filter((party) => groups[i].names.includes(party.name))
             let groupPartiesMandates = this.sumOfPropertyInObjectsArray(groupParties, ["mandates"]) + this.sumOfPropertyInObjectsArray(groupParties, ["moreMandates"])
-            if (groupPartiesMandates < groupMandates) {
-                let partyNameToAddMandate = groupParties[this.max(groupParties)].name;
-                let partyIndex = partiesOverBlockageThreshold.findIndex(party => party.name === partyNameToAddMandate)
-                partiesOverBlockageThreshold[partyIndex]["moreMandates"] += 1
+            if (groupParties.length > 1) {
+                while (groups[i].rate.length > 0) {
+                    let partyNameToAddMandate = groupParties[this.max(groupParties)].name;
+                    let partyIndex = partiesOverBlockageThreshold.findIndex(party => party.name === partyNameToAddMandate);
+                    partiesOverBlockageThreshold[partyIndex].rate.push(groups[i].rate.shift());
+                    if (groupPartiesMandates < groupMandates) {
+                        partiesOverBlockageThreshold[partyIndex].moreMandates += 1;
+                        groupPartiesMandates++;
+                    }
+                }
             }
         }
+        partiesOverBlockageThreshold.forEach(party => {
+            if (party.rate.length === 0) {
+                party.rate.push(rate)
+            }
+        })
         this.state.partiesResults.sort(function (a, b) {
             return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)
         })
         this.setState({
-            results: true
+            results: true,
+            distributionMandates: updateDistributionMandates
         })
     }
 
     updateGroupsFromParties = (partiesOverBlockageThreshold) => {
-        for (let i = 0; i < groups.length; i++) {
-            let group = partiesOverBlockageThreshold.filter((party) => groups[i]["names"].includes(party["name"]))
-            groups[i]["votes"] = this.sumOfPropertyInObjectsArray(group, ["votes"])
-            groups[i]["mandates"] = this.sumOfPropertyInObjectsArray(group, ["mandates"])
-            groups[i]["next_mandate_votes_per_mandate"] = groups[i].votes / (groups[i].mandates + 1)
-        }
+        groups.forEach(group => {
+            let party = partiesOverBlockageThreshold.filter((party) => group.names.includes(party.name));
+            group.votes = this.sumOfPropertyInObjectsArray(party, ["votes"]);
+            group.mandates = this.sumOfPropertyInObjectsArray(party, ["mandates"]);
+            group.next_mandate_votes_per_mandate = group.votes / (group.mandates + 1);
+        })
+        groups.forEach(group => {
+            group.names.forEach(name => {
+                let included = partiesOverBlockageThreshold.some(party => party.name === name);
+                if (!included) {
+                    let index = group.names.indexOf(name)
+                    group.names.splice(index, 1);
+                }
+            })
+        })
     }
 
     sumOfPropertyInObjectsArray = (arrayOfObjects, props) => {
@@ -276,6 +352,18 @@ class App extends Component {
         return index;
     }
 
+    maxGroup = (groups) => {
+        let index = 0;
+        let max = 0;
+        for (let i = 0; i < groups.length; i++) {
+            if (max < groups[i].next_mandate_votes_per_mandate) {
+                max = groups[i].next_mandate_votes_per_mandate;
+                index = i;
+            }
+        }
+        return groups[index];
+    }
+
     remainedMandates = (groups) => {
         let sum = 0;
         for (let i = 0; i < groups.length; i++) {
@@ -290,8 +378,13 @@ class App extends Component {
             party.mandates = 0;
             party.next_mandate_votes_per_mandate = 0;
             party.moreMandates = 0;
-            party.distance = 0;
-
+            party.rate = [];
+        })
+        groups.forEach((group) => {
+            group.mandates = 0;
+            group.next_mandate_votes_per_mandate = 0;
+            group.moreMandates = 0;
+            group.rate = [];
         })
         this.setState({
             results: false
@@ -336,6 +429,18 @@ class App extends Component {
         this.setState({});
     }
 
+    sortByRate = () => {
+        this.state.partiesResults.sort(function (a, b) {
+            return ((a.rate[0]) - (b.rate[0]))
+        })
+        this.setState({});
+    }
+
+    sortByName = () => {
+        this.state.partiesResults.sort((a, b) => a.name.localeCompare(b.name))
+        this.setState({});
+    }
+
     render() {
         return (
             <div id={"main-container"}>
@@ -344,14 +449,17 @@ class App extends Component {
                     <table>
                         <thead>
                         <tr id={"table-row-header"}>
-                            <th>
-                                מפלגה
+                            <th onClick={this.sortByName} className={"border-header border-header-sort"}>
+                                מפלגה &#8595;
                             </th>
                             <th onClick={this.sortByVotes} className={"border-header border-header-sort"}>
-                                 קולות &#8595;
+                                קולות &#8595;
                             </th>
                             <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
-                                 לפני באדר עופר &#8595;
+                                לפני באדר עופר &#8595;
+                            </th>
+                            <th onClick={this.sortByRate} className={"border-header border-header-sort"}>
+                                דירוג {this.state.distributionMandates} מנדטים לחלוקה &#8595;
                             </th>
                             <th onClick={this.sortBySum} className={"border-header border-header-sort"}>
                                 סה"כ &#8595;
@@ -365,7 +473,7 @@ class App extends Component {
                                     <tr key={i}>
                                         <td style={{
                                             fontWeight: "bold",
-                                            backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null
+                                            backgroundColor: (item.moreMandates > 0) ? "#00fa9a" : null
                                         }}>
                                             {item.name}
                                         </td>
@@ -387,9 +495,27 @@ class App extends Component {
                                             {item.mandates}
                                         </td>
                                         <td style={{
-                                            fontWeight: "bold",
-                                            backgroundColor: (item.moreMandates > 0) ? "SpringGreen" : null
+                                            color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "springgreen"
+                                                :
+                                                item.rate[0] > this.state.distributionMandates && item.rate[0] <= this.state.distributionMandates + 2 ? "#e5ff00"
+                                                    :
+                                                    "#da0101",
+                                            fontSize: "1.2em",
+                                            fontWeight: "bold"
                                         }}>
+                                            {item.rate.length === 1 ? item.rate[0] : item.rate.map(rate => {
+                                                return (<span style={{
+                                                    color: rate > 0 && rate <= this.state.distributionMandates ? "springgreen"
+                                                        :
+                                                        rate > this.state.distributionMandates && rate <= this.state.distributionMandates + 2 ? "#e5ff00"
+                                                            :
+                                                            "#da0101"
+                                                }}>{rate} {item.rate.indexOf(rate) !== item.rate.length-1 && <span style={{color: "rgba(82,87,82,0.94)"}}> , </span>}</span>)
+                                            })} {item.rate.length === 0 && "-"}
+                                        </td>
+                                        <td style={{
+                                            fontSize: "1.3em",
+                                            fontWeight: "bold"                                        }}>
                                             {item.moreMandates + item.mandates}
                                         </td>
                                     </tr>
@@ -424,7 +550,11 @@ class App extends Component {
                 <div id={"footer"}>
                     <footer>
                         <div style={{textShadow: "0 0 10px #a8e38a"}}>
-                            © 2022 Developed by BYT Dev <br/><p>The creators of <a id={"wordle-link"} href={"https://hebrewordle.netlify.app/"} rel={"noreferrer noopener"} target={"_blank"}> Hebrew Wordle</a></p>
+                            © 2022 Developed by BYT Dev <br/><p>The creators of <a id={"wordle-link"}
+                                                                                   href={"https://hebrewordle.netlify.app/"}
+                                                                                   rel={"noreferrer noopener"}
+                                                                                   target={"_blank"}> Hebrew Wordle</a>
+                        </p>
                             <div id={"links"}>
                                 <a className={"images"} rel={"noreferrer noopener"} target={"_blank"}
                                    href={"https://github.com/bytdev2022/bader-ofer-calculator"}>
