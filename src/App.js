@@ -497,7 +497,7 @@ class App extends Component {
                                         <td style={{
                                             color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "springgreen"
                                                 :
-                                                item.rate[0] > this.state.distributionMandates && item.rate[0] <= this.state.distributionMandates + 2 ? "#e5ff00"
+                                                item.rate[0] > this.state.distributionMandates && item.rate[0] <= this.state.distributionMandates + 2 ? "#FFFF00"
                                                     :
                                                     "#da0101",
                                             fontSize: "1.2em",
@@ -507,11 +507,11 @@ class App extends Component {
                                                 return (<span style={{
                                                     color: rate > 0 && rate <= this.state.distributionMandates ? "springgreen"
                                                         :
-                                                        rate > this.state.distributionMandates && rate <= this.state.distributionMandates + 2 ? "#e5ff00"
+                                                        rate > this.state.distributionMandates && rate <= this.state.distributionMandates + 2 ? "#FFFF00"
                                                             :
                                                             "#da0101"
                                                 }}>{rate} {item.rate.indexOf(rate) !== item.rate.length-1 && <span style={{color: "rgba(82,87,82,0.94)"}}> , </span>}</span>)
-                                            })} {item.rate.length === 0 && "-"}
+                                            })} {item.rate.length === 0 && <span style={{color: "black"}}>-</span>}
                                         </td>
                                         <td style={{
                                             fontSize: "1.3em",
