@@ -85,7 +85,7 @@ class App extends Component {
         partiesResults: [
             {
                 "name": 'הליכוד',
-                "votes": 1063942,
+                "votes": 1102965,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -94,7 +94,7 @@ class App extends Component {
             },
             {
                 "name": 'יש עתיד',
-                "votes": 808157,
+                "votes": 838169,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -103,7 +103,7 @@ class App extends Component {
             },
             {
                 "name": 'הציונות הדתית',
-                "votes": 483842,
+                "votes": 509356,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -112,7 +112,7 @@ class App extends Component {
             },
             {
                 "name": 'המחנה הממלכתי',
-                "votes": 409480,
+                "votes": 427163,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -121,7 +121,7 @@ class App extends Component {
             },
             {
                 "name": 'ש"ס',
-                "votes": 375911,
+                "votes": 388753,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -130,7 +130,7 @@ class App extends Component {
             },
             {
                 "name": 'יהדות התורה',
-                "votes": 270901,
+                "votes": 278185,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -139,7 +139,7 @@ class App extends Component {
             },
             {
                 "name": 'ישראל ביתנו',
-                "votes": 200421,
+                "votes": 210454,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -148,7 +148,7 @@ class App extends Component {
             },
             {
                 "name": 'רע"מ',
-                "votes": 188577,
+                "votes": 192660,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -157,7 +157,7 @@ class App extends Component {
             },
             {
                 "name": 'חד"ש תע"ל',
-                "votes": 173522,
+                "votes": 177233,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -166,7 +166,7 @@ class App extends Component {
             },
             {
                 "name": 'העבודה',
-                "votes": 163530,
+                "votes": 173156,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -534,6 +534,9 @@ class App extends Component {
                             <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
                                 לפני באדר עופר &#8595;
                             </th>
+{/*                            <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
+                                ממוצע למנדט &#8595;
+                            </th>*/}
                             <th onClick={this.sortByRate} className={"border-header border-header-sort"}>
                                 דירוג {this.state.distributionMandates} מנדטים לחלוקה &#8595;
                             </th>
@@ -570,6 +573,13 @@ class App extends Component {
                                         <td>
                                             {item.mandates}
                                         </td>
+         {/*                               <td style={{
+                                            fontSize: "1.3em",
+                                            fontWeight: "bold"
+                                        }}>
+                                            {groups[groups.findIndex(group => group.names.includes(item.name))].next_mandate_votes_per_mandate > 0 &&
+                                                groups[groups.findIndex(group => group.names.includes(item.name))].next_mandate_votes_per_mandate}
+                                        </td>*/}
                                         <td style={{
                                             color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "#00d523"
                                                 :
