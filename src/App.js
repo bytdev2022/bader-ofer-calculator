@@ -85,7 +85,7 @@ class App extends Component {
         partiesResults: [
             {
                 "name": 'הליכוד',
-                "votes": 1048820,
+                "votes": 1063942,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -94,7 +94,7 @@ class App extends Component {
             },
             {
                 "name": 'יש עתיד',
-                "votes": 798416,
+                "votes": 808157,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -103,7 +103,7 @@ class App extends Component {
             },
             {
                 "name": 'הציונות הדתית',
-                "votes": 474224,
+                "votes": 483842,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -112,7 +112,7 @@ class App extends Component {
             },
             {
                 "name": 'המחנה הממלכתי',
-                "votes": 403459,
+                "votes": 409480,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -121,7 +121,7 @@ class App extends Component {
             },
             {
                 "name": 'ש"ס',
-                "votes": 371459,
+                "votes": 375911,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -130,7 +130,7 @@ class App extends Component {
             },
             {
                 "name": 'יהדות התורה',
-                "votes": 268522,
+                "votes": 270901,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -139,7 +139,7 @@ class App extends Component {
             },
             {
                 "name": 'ישראל ביתנו',
-                "votes": 196338,
+                "votes": 200421,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -148,7 +148,7 @@ class App extends Component {
             },
             {
                 "name": 'רע"מ',
-                "votes": 187517,
+                "votes": 188577,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -157,7 +157,7 @@ class App extends Component {
             },
             {
                 "name": 'חד"ש תע"ל',
-                "votes": 172380,
+                "votes": 173522,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -166,7 +166,7 @@ class App extends Component {
             },
             {
                 "name": 'העבודה',
-                "votes": 160655,
+                "votes": 163530,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
