@@ -175,7 +175,7 @@ class App extends Component {
             },
             {
                 "name": 'מרץ',
-                "votes": 1,
+                "votes": 140000,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -184,7 +184,7 @@ class App extends Component {
             },
             {
                 "name": 'בל"ד',
-                "votes": 1,
+                "votes": 130000,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -193,7 +193,7 @@ class App extends Component {
             },
             {
                 "name": 'הבית היהודי',
-                "votes": 1,
+                "votes": 50000,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
