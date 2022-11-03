@@ -85,7 +85,7 @@ class App extends Component {
         partiesResults: [
             {
                 "name": 'הליכוד',
-                "votes": 979036,
+                "votes": 1044314,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -94,7 +94,7 @@ class App extends Component {
             },
             {
                 "name": 'יש עתיד',
-                "votes": 752682,
+                "votes": 795207,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -103,7 +103,7 @@ class App extends Component {
             },
             {
                 "name": 'הציונות הדתית',
-                "votes": 432797,
+                "votes": 471191,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -112,7 +112,7 @@ class App extends Component {
             },
             {
                 "name": 'המחנה הממלכתי',
-                "votes": 374527,
+                "votes": 401388,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -121,7 +121,7 @@ class App extends Component {
             },
             {
                 "name": 'ש"ס',
-                "votes": 352230,
+                "votes": 370191,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -130,7 +130,7 @@ class App extends Component {
             },
             {
                 "name": 'יהדות התורה',
-                "votes": 257028,
+                "votes": 267853,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -139,7 +139,7 @@ class App extends Component {
             },
             {
                 "name": 'ישראל ביתנו',
-                "votes": 182683,
+                "votes": 195362,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -148,7 +148,7 @@ class App extends Component {
             },
             {
                 "name": 'רע"מ',
-                "votes": 181987,
+                "votes": 187218,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -157,7 +157,7 @@ class App extends Component {
             },
             {
                 "name": 'חד"ש תע"ל',
-                "votes": 163949,
+                "votes": 172052,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -166,7 +166,7 @@ class App extends Component {
             },
             {
                 "name": 'העבודה',
-                "votes": 149482,
+                "votes": 159742,
                 "rate": [],
                 "mandates": 0,
                 "moreMandates": 0,
@@ -495,23 +495,19 @@ class App extends Component {
                                             {item.mandates}
                                         </td>
                                         <td style={{
-                                            color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "springgreen"
+                                            color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "#00d523"
                                                 :
-                                                item.rate[0] > this.state.distributionMandates && item.rate[0] <= this.state.distributionMandates + 2 ? "#FFFF00"
-                                                    :
-                                                    "#da0101",
+                                                item.rate[0] > this.state.distributionMandates && item.rate[0] <= this.state.distributionMandates + 2 && "#0145c5",
                                             fontSize: "1.2em",
                                             fontWeight: "bold"
                                         }}>
-                                            {item.rate.length === 1 ? item.rate[0] : item.rate.map(rate => {
+                                            {(item.rate.length === 1 && item.rate <= this.state.distributionMandates + 2) ? item.rate[0] : item.rate.map((rate, i) => {
                                                 return (<span style={{
-                                                    color: rate > 0 && rate <= this.state.distributionMandates ? "springgreen"
+                                                    color: rate > 0 && rate <= this.state.distributionMandates ? "#00d523"
                                                         :
-                                                        rate > this.state.distributionMandates && rate <= this.state.distributionMandates + 2 ? "#FFFF00"
-                                                            :
-                                                            "#da0101"
-                                                }}>{rate} {item.rate.indexOf(rate) !== item.rate.length-1 && <span style={{color: "rgba(82,87,82,0.94)"}}> , </span>}</span>)
-                                            })} {item.rate.length === 0 && <span style={{color: "black"}}>-</span>}
+                                                        rate > this.state.distributionMandates && rate <= this.state.distributionMandates + 2 && "#0145c5"
+                                                }}>{rate <= this.state.distributionMandates + 2 && rate} {(item.rate[i+1] <= this.state.distributionMandates + 2) && <span style={{color: "rgba(82,87,82,0.94)"}}> , </span>}</span>)
+                                            })} {(item.rate.length === 0 || (item.rate.length > 0 && item.rate[0] > this.state.distributionMandates + 2)) && <span style={{color: "black"}}>-</span>}
                                         </td>
                                         <td style={{
                                             fontSize: "1.3em",
