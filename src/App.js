@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import gitImage from './images/git.png';
 import linkedinImage from './images/linkedin.png';
+import CountUp from 'react-countup';
 
 const ALL_MANDATES = 120;
 const BLOCKAGE_THRESHOLD_RATE = 3.25;
@@ -380,6 +381,8 @@ class App extends Component {
                 return a - b;
             })
         })
+        console.log(partiesOverBlockageThreshold)
+        console.log(groups)
         this.state.partiesResults.sort(function (a, b) {
             return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)
         })
@@ -498,6 +501,13 @@ class App extends Component {
         this.setState({});
     }
 
+    sortByVotesPerMandate = () => {
+        this.state.partiesResults.sort(function (a, b) {
+            return (b.next_mandate_votes_per_mandate - a.next_mandate_votes_per_mandate)
+        })
+        this.setState({});
+    }
+
     sortBySum = () => {
         this.state.partiesResults.sort(function (a, b) {
             return (b.mandates + b.moreMandates) - (a.mandates + a.moreMandates)
@@ -517,6 +527,17 @@ class App extends Component {
         this.setState({});
     }
 
+    printVotesPerMandate = (item) => {
+        let groupIndex = groups.findIndex(group => group.names.includes(item.name));
+        return groupIndex >= 0 ?
+            (groups[groupIndex].next_mandate_votes_per_mandate > item.next_mandate_votes_per_mandate) ?
+                groups[groupIndex].next_mandate_votes_per_mandate
+                :
+                item.next_mandate_votes_per_mandate
+            :
+            item.next_mandate_votes_per_mandate;
+    }
+
     render() {
         return (
             <div id={"main-container"}>
@@ -534,9 +555,9 @@ class App extends Component {
                             <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
                                 לפני באדר עופר &#8595;
                             </th>
-{/*                            <th onClick={this.sortByMandates} className={"border-header border-header-sort"}>
+                            <th onClick={this.sortByVotesPerMandate} className={"border-header border-header-sort"}>
                                 ממוצע למנדט &#8595;
-                            </th>*/}
+                            </th>
                             <th onClick={this.sortByRate} className={"border-header border-header-sort"}>
                                 דירוג {this.state.distributionMandates} מנדטים לחלוקה &#8595;
                             </th>
@@ -573,13 +594,18 @@ class App extends Component {
                                         <td>
                                             {item.mandates}
                                         </td>
-         {/*                               <td style={{
-                                            fontSize: "1.3em",
-                                            fontWeight: "bold"
+                                        <td style={{
+                                            fontSize: "1.1em",
                                         }}>
-                                            {groups[groups.findIndex(group => group.names.includes(item.name))].next_mandate_votes_per_mandate > 0 &&
-                                                groups[groups.findIndex(group => group.names.includes(item.name))].next_mandate_votes_per_mandate}
-                                        </td>*/}
+                                            {
+                                                item.next_mandate_votes_per_mandate > 0 ? <CountUp start={this.printVotesPerMandate(item) / 1.7}
+                                                                                                   end={this.printVotesPerMandate(item)}
+                                                                                                   duration={1}
+                                                    />
+                                                    :
+                                                    "-"
+                                            }
+                                        </td>
                                         <td style={{
                                             color: item.rate[0] > 0 && item.rate[0] <= this.state.distributionMandates ? "#00d523"
                                                 :
@@ -596,7 +622,7 @@ class App extends Component {
                                                     <span style={{color: "rgba(82,87,82,0.94)"}}> , </span>}</span>)
                                             })}
                                             {((item.rate.length === 0) || (item.rate[0] > (this.state.distributionMandates + 2))) ?
-                                            <span style={{color: "black"}}>-</span> : ""}
+                                                <span style={{color: "black"}}>-</span> : ""}
                                         </td>
                                         <td style={{
                                             fontSize: "1.3em",
@@ -659,6 +685,7 @@ class App extends Component {
         );
 
     }
+
 
 }
 
